@@ -1,13 +1,8 @@
-#!/usr/bin/env node
+require("dotenv").config();
 
-/**
- * Module dependencies.
- */
-
-var app = require("../app");
+var app = require("./app");
 var debug = require("debug")("code4share:server");
 var http = require("http");
-require("dotenv").config();
 
 /**
  * Get port from environment and store in Express.
@@ -21,7 +16,7 @@ app.set("port", port);
  */
 
 var server = http.createServer(app);
-require("../socket-server")(server);
+require("./socket-server")(server);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -84,6 +79,5 @@ function onError(error) {
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-  console.log(`^^ Server listening on port ${bind}`);
   debug("Listening on " + bind);
 }

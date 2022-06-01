@@ -1,13 +1,14 @@
-'use strict'
+"use strict";
 
 module.exports = {
   mailer: {
-    service: 'Gmail',
+    service: "Gmail",
     auth: {
-      user: 'YOUR_GMAIL_ADDRESS',
-      pass: 'YOUR_GMAIL_PASSWORD'
-    }
+      user: "YOUR_GMAIL_ADDRESS",
+      pass: "YOUR_GMAIL_PASSWORD",
+    },
   },
-  dbConnstring: 'mongodb://admin:123@ds137760.mlab.com:37760/code4share',
-  sessionKey: 'HaloCode4Share'
-}
+  dbConnstring:
+    "mongodb://root:123456@localhost:27017/code4share?directConnection=true&authSource=admin&retryWrites=true&w=majority",
+  sessionKey: "HaloCode4Share",
+};
